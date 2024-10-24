@@ -17,6 +17,7 @@ func main() {
 
 	// Настройка маршрутов
 	r := mux.NewRouter()
+	r.HandleFunc("/", homeHandler)
 	r.HandleFunc("/request-access", requestAccess).Methods("POST")
 	r.HandleFunc("/get-access-requests", getAccessRequests).Methods("GET")
 
